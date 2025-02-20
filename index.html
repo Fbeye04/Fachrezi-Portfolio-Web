@@ -11,7 +11,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./main.css" />
 
     <script
       src="https://kit.fontawesome.com/ebfc0337fb.js"
@@ -22,24 +22,37 @@
     <header>
       <nav class="nav-container" aria-label="Main navigation">
         <h1>Fachrezi</h1>
-        <ul>
-          <li><a href="#about-me">About Me</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#contact-me">Contact Me</a></li>
-        </ul>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- mobile -->
+        <div class="list-content">
+          <div class="menu-open" id="menu-open">
+            <div class="menu-header">
+              <button class="close-button" id="close-button">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <ul>
+              <li><a href="#about-me">About Me</a></li>
+              <li><a href="#projects">Project</a></li>
+              <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+          </div>
+
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
       <section id="home" class="hero">
-        <img src="./images/main profile picture.jpg" alt="Profile picture" />
+        <div class="hero-header">
+          <img src="./images/main profile picture.jpg" alt="Profile picture" />
+        </div>
         <div class="hero-content">
-          <p class="greeting&role">Hi, I'm</p>
+          <p class="greeting-role">Hi, I'm</p>
           <h2>Muhammad Fachrezi Barus</h2>
-          <p class="greeting&role">Front-end Developer</p>
+          <p class="greeting-role">Front-end Developer</p>
           <a
             href="https://drive.google.com/file/d/1OiWDKGROffgoDznD6jMrTLeXeTU818qX/view?usp=sharing"
             class="btn-download"
@@ -51,29 +64,37 @@
 
       <section id="about-me">
         <h2 class="section-title">About Me</h2>
-        <div class="about-me-content" id="get-to-know">
-          <h3>Get to Know Me</h3>
-          <img
-            src="./images/second profile picture.jpg"
-            alt="Second Profile Picture" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
-            facere voluptatem porro beatae mollitia excepturi, iste voluptas
-            nisi nesciunt ipsum eaque soluta doloribus nemo id veritatis?
-            Quibusdam eos molestias voluptatum.
-          </p>
+        <div class="get-to-know">
+          <div class="get-to-know-header">
+            <h3>Get to Know Me</h3>
+            <img
+              src="./images/second profile picture.jpg"
+              alt="Second Profile Picture" />
+          </div>
+          <div class="get-to-know-body">
+            <p>
+              I am Muhammad Fachrezi Barus, a physics student at ITS with a
+              strong passion for front-end web development. Over the past year,
+              I have been honing my skills in HTML, CSS, JavaScript, Bootstrap,
+              and Sass, with additional knowledge of Git and Node.js. I am eager
+              to build intuitive and responsive web applications while
+              continuously expanding my expertise in modern web technologies. My
+              goal is to become a software engineer who contributes to impactful
+              digital solutions.
+            </p>
+          </div>
         </div>
 
         <div class="skills-content" id="my-skills">
           <h3>My Skills</h3>
           <div class="skills-grid">
-            <div class="skill-box">HTML</div>
-            <div class="skill-box">CSS</div>
-            <div class="skill-box">JavaScript</div>
-            <div class="skill-box">Bootstrap</div>
-            <div class="skill-box">SASS</div>
-            <div class="skill-box">GIT</div>
-            <div class="skill-box">Node JS</div>
+            <div class="skill-box" id="html">HTML</div>
+            <div class="skill-box" id="css">CSS</div>
+            <div class="skill-box" id="js">JavaScript</div>
+            <div class="skill-box" id="bootstrap">Bootstrap</div>
+            <div class="skill-box" id="sass">SASS</div>
+            <div class="skill-box" id="git">GIT</div>
+            <div class="skill-box" id="nodejs">Node JS</div>
           </div>
         </div>
       </section>
@@ -88,7 +109,17 @@
                 alt="RestoMate Project thumbnail" />
             </div>
             <div class="card-body">
-              <p>Restomate</p>
+              <div class="card-body-header">
+                <h3>Restomate</h3>
+                <p>
+                  A restaurant catalog web app built with a mobile-first
+                  approach, emphasizing web accessibility, clean code
+                  principles, and progressive enhancement. Implemented automated
+                  testing, performance optimization, and deployed using CI/CD
+                  pipelines.
+                </p>
+              </div>
+
               <div class="card-links">
                 <a
                   href="https://github.com/Fbeye04/restaurant-service-catalogue-final"
@@ -109,7 +140,15 @@
                 alt="Note App Project thumbnail" />
             </div>
             <div class="card-body">
-              <p>Note App</p>
+              <div class="card-body-header">
+                <h3>Note App</h3>
+                <p>
+                  A simple yet powerful note-taking application utilizing NPM
+                  for package management, Webpack for module bundling, and REST
+                  APIs for data handling, ensuring an optimized and scalable
+                  user experience.
+                </p>
+              </div>
               <div class="card-links">
                 <a
                   href="https://github.com/Fbeye04/note-app"
@@ -131,7 +170,16 @@
                 alt="Time Tracking Dashboard Project thumbnail" />
             </div>
             <div class="card-body">
-              <p>Time Tracking Dashboard</p>
+              <div class="card-body-header">
+                <h3>Time Tracking Dashboard</h3>
+                <p>
+                  A responsive dashboard for tracking time and productivity,
+                  featuring interactive UI components, real-time data
+                  visualization, and a user-friendly design for efficient time
+                  management.
+                </p>
+              </div>
+              <p></p>
               <div class="card-links">
                 <a
                   href="https://github.com/Fbeye04/Time-Tracking-Dashboard"
@@ -153,7 +201,14 @@
                 alt="Newsletter Signup Page Project thumbnail" />
             </div>
             <div class="card-body">
-              <p>Newsletter Signup Page</p>
+              <div class="card-body-header">
+                <h3>Newsletter Signup Page</h3>
+                <p>
+                  A minimalistic and accessible newsletter signup form designed
+                  for seamless user experience, integrating form validation, API
+                  handling, and responsive design principles.
+                </p>
+              </div>
               <div class="card-links">
                 <a
                   href="https://github.com/Fbeye04/Newsletter-SignUp-Page"
@@ -182,17 +237,35 @@
         <form action="" method="post">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              maxlength="50"
+              placeholder="Enter your name"
+              required />
           </div>
 
           <div class="form-group">
             <label for="Email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              placeholder="Enter your email"
+              required />
           </div>
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea name="message" id="message" required></textarea>
+            <textarea
+              name="message"
+              id="message"
+              minlength="10"
+              maxlength="500"
+              placeholder="Enter your message"
+              required></textarea>
           </div>
 
           <button type="submit">Submit</button>
@@ -231,7 +304,7 @@
         </ul>
       </div>
       <div class="copyright-text">
-        <p>Copyright © 2025 Fachrezi</p>
+        <p>Copyright © 2025 <span>Fachrezi</span></p>
       </div>
     </footer>
   </body>
