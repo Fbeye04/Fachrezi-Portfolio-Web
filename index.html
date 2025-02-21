@@ -41,6 +41,14 @@
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
+        <!-- desktop -->
+        <div class="list-content-desktop">
+          <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#contact-me">Contact Me</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -50,15 +58,18 @@
           <img src="./images/main profile picture.jpg" alt="Profile picture" />
         </div>
         <div class="hero-content">
-          <p class="greeting-role">Hi, I'm</p>
-          <h2>Muhammad Fachrezi Barus</h2>
-          <p class="greeting-role">Front-end Developer</p>
-          <a
-            href="https://drive.google.com/file/d/1OiWDKGROffgoDznD6jMrTLeXeTU818qX/view?usp=sharing"
-            class="btn-download"
-            target="_blank"
-            >Download CV</a
-          >
+          <div class="hero-text">
+            <p>Hi, I'm</p>
+            <h2>Muhammad Fachrezi Barus</h2>
+            <p>Front-end Developer</p>
+          </div>
+          <div class="btn-download">
+            <a
+              href="https://drive.google.com/file/d/1OiWDKGROffgoDznD6jMrTLeXeTU818qX/view?usp=sharing"
+              target="_blank"
+              >Download CV</a
+            >
+          </div>
         </div>
       </section>
 
@@ -67,11 +78,11 @@
         <div class="get-to-know">
           <div class="get-to-know-header">
             <h3>Get to Know Me</h3>
+          </div>
+          <div class="get-to-know-body">
             <img
               src="./images/second profile picture.jpg"
               alt="Second Profile Picture" />
-          </div>
-          <div class="get-to-know-body">
             <p>
               I am Muhammad Fachrezi Barus, a physics student at ITS with a
               strong passion for front-end web development. Over the past year,
@@ -127,7 +138,10 @@
                   target="_blank"
                   >Repository</a
                 >
-                <a href="https://restomate.netlify.app/" class="btn-live-site"
+                <a
+                  href="https://restomate.netlify.app/"
+                  class="btn-live-site"
+                  target="_blank"
                   >Live Site</a
                 >
               </div>
@@ -153,11 +167,13 @@
                 <a
                   href="https://github.com/Fbeye04/note-app"
                   class="btn-repository"
+                  target="_blank"
                   >Repository</a
                 >
                 <a
                   href="https://note-app-woad-two.vercel.app/"
                   class="btn-live-site"
+                  target="_blank"
                   >Live Site</a
                 >
               </div>
@@ -184,11 +200,13 @@
                 <a
                   href="https://github.com/Fbeye04/Time-Tracking-Dashboard"
                   class="btn-repository"
+                  target="_blank"
                   >Repository</a
                 >
                 <a
                   href="https://fbeye04.github.io/Time-Tracking-Dashboard/"
                   class="btn-live-site"
+                  target="_blank"
                   >Live Site</a
                 >
               </div>
@@ -213,11 +231,13 @@
                 <a
                   href="https://github.com/Fbeye04/Newsletter-SignUp-Page"
                   class="btn-repository"
+                  target="_blank"
                   >Repository</a
                 >
                 <a
                   href="https://fbeye04.github.io/Newsletter-SignUp-Page/"
                   class="btn-live-site"
+                  target="_blank"
                   >Live Site</a
                 >
               </div>
@@ -234,7 +254,15 @@
 
       <section id="contact-me">
         <h2 class="section-title">Contact Me</h2>
-        <form action="" method="post">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="post"
+          id="contact-form">
+          <input
+            type="hidden"
+            name="access_key"
+            value="6c7955b5-f495-4ba3-a499-5e7451a57344" />
+
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -268,7 +296,17 @@
               required></textarea>
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" id="submit-button">Submit</button>
+
+          <!-- alert messages -->
+          <div class="alert-container">
+            <div class="alert alert-success" id="success-message">
+              <p>Message sent successfully!</p>
+            </div>
+            <div class="alert alert-error" id="error-message">
+              <p>Something went wrong. Please try again.</p>
+            </div>
+          </div>
         </form>
       </section>
     </main>
