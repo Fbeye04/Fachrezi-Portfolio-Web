@@ -217,12 +217,11 @@ main {
 }
 
 .btn-download:hover {
-  background-color: #fff;
-  border: 5px solid var(--alert-success-text);
+  background-color: #f5f5f5;
 }
 
 .btn-download:hover a {
-  color: var(--alert-success-text);
+  color: #fc5185;
   font-weight: var(--fw-bold);
 }
 
@@ -324,7 +323,6 @@ main {
 }
 
 #projects {
-  text-align: center;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -342,7 +340,7 @@ main {
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
+  min-width: 300px;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -353,9 +351,14 @@ main {
   border-radius: 0.5rem;
 }
 
+.card-body-header h3 {
+  text-align: center;
+}
+
 .card-body-header p {
   margin-top: 1rem;
   padding: 0 1rem;
+  text-align: justify;
 }
 
 .card-links {
@@ -384,8 +387,9 @@ main {
 }
 
 .btn-see-more:hover {
-  background-color: var(--custom-grey);
-  color: var(--custom-black);
+  background-color: #f5f5f5;
+  color: #fc5185;
+  font-weight: var(--fw-bold);
 }
 
 #contact-me {
@@ -416,8 +420,9 @@ form {
   font-family: "Montserrat", serif;
   padding: 1rem;
   margin-top: 0.5rem;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 0.2rem;
+  transition: border-color 0.3s ease;
 }
 
 .form-group textarea {
@@ -427,50 +432,44 @@ form {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
+  border-color: var(--custom-black);
 }
 
-form button {
+.form-group.success input,
+.form-group.success textarea {
+  border-color: var(--alert-success-border);
+}
+
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--alert-error-border);
+}
+
+.form-group .error {
+  color: var(--alert-error-text);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+#submit-button {
   background-color: var(--custom-black);
   color: #fff;
   padding: 0.7rem 2rem;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: block;
   margin-inline: auto;
   font-weight: var(--fw-semibold);
   font-size: 1.1rem;
 }
 
-form button:hover {
-  background-color: #000;
+#submit-button:hover {
+  background-color: #f5f5f5;
+  color: #fc5185;
   font-weight: var(--fw-bold);
-}
-
-/* Alert Messages */
-.alert-container {
-  margin-top: 1rem;
-}
-
-.alert {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-weight: var(--fw-semibold);
-  display: none;
-  animation: slideIn 0.3s ease-in-out;
-}
-
-.alert-success {
-  background-color: var(--alert-success-bg);
-  color: var(--alert-success-text);
-  border: 1px solid var(--alert-success-border);
-}
-
-.alert-error {
-  background-color: var(--alert-error-bg);
-  color: var(--alert-error-text);
-  border: 1px solid var(--alert-error-border);
 }
 
 @keyframes slideIn {
@@ -482,6 +481,53 @@ form button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+  max-width: 400px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(120%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast i {
+  font-size: 1.5rem;
+}
+
+.toast-message {
+  font-size: 1rem;
+  font-weight: var(--fw-semibold);
+}
+
+.toast.success {
+  border-left: 4px solid var(--alert-success-border);
+}
+
+.toast.success i {
+  color: var(--alert-success-text);
+}
+
+.toast.error {
+  border-left: 4px solid var(--alert-error-border);
+}
+
+.toast.error i {
+  color: var(--alert-error-text);
 }
 
 footer {
@@ -567,7 +613,6 @@ footer {
 
   .get-to-know-body {
     font-size: 1.2rem;
-    text-align: center;
   }
 
   .skill-box {
@@ -580,6 +625,12 @@ footer {
 
   .social-media ul li i {
     font-size: 1.8rem;
+  }
+
+  .toast {
+    width: calc(100% - 40px);
+    min-width: unset;
+    max-width: unset;
   }
 }
 
@@ -602,6 +653,20 @@ footer {
 
   a {
     font-size: 1.1rem;
+  }
+
+  header,
+  footer {
+    max-width: 64rem;
+  }
+
+  main {
+    max-width: 60rem;
+    margin-top: 7rem;
+  }
+
+  .nav-container {
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
   }
 
   .list-content {
@@ -630,15 +695,9 @@ footer {
     font-weight: var(--fw-bold);
   }
 
-  header,
-  footer {
-    max-width: 60rem;
+  #about-me {
+    margin-top: 7rem;
   }
-
-  main {
-    max-width: 55rem;
-  }
-
   .hero {
     flex-direction: row;
     gap: 2rem;
@@ -676,6 +735,19 @@ footer {
     grid-template-areas:
       "html css js bootstrap"
       "sass git nodejs ...";
+  }
+
+  .card-body-header h3 {
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .card-body-header p {
+    text-align: left;
+  }
+
+  form {
+    max-width: 55rem;
   }
 
   .social-media ul li i {
