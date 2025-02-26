@@ -1,6 +1,7 @@
 const menuToggle = document.getElementById("menu-toggle");
 const menuOpen = document.getElementById("menu-open");
 const closeButton = document.getElementById("close-button");
+const hiddenElement = document.querySelectorAll(".hidden");
 const contactForm = document.getElementById("contact-form");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
@@ -10,6 +11,18 @@ function toggleMenu() {
   menuOpen.classList.toggle("active");
   menuToggle.classList.toggle("nonactive");
 }
+
+const obsever = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+hiddenElement.forEach((el) => obsever.observe(el));
 
 const setError = (input, message) => {
   const formControl = input.parentElement;

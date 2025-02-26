@@ -53,7 +53,7 @@
     </header>
 
     <main>
-      <section id="home" class="hero">
+      <section id="home" class="hero hidden">
         <div class="hero-header">
           <img src="./images/main profile picture.jpg" alt="Profile picture" />
         </div>
@@ -79,7 +79,7 @@
           <div class="get-to-know-header">
             <h3>Get to Know Me</h3>
           </div>
-          <div class="get-to-know-body">
+          <div class="get-to-know-body hidden">
             <img
               src="./images/second profile picture.jpg"
               alt="Second Profile Picture" />
@@ -99,13 +99,13 @@
         <div class="skills-content" id="my-skills">
           <h3>My Skills</h3>
           <div class="skills-grid">
-            <div class="skill-box" id="html">HTML</div>
-            <div class="skill-box" id="css">CSS</div>
-            <div class="skill-box" id="js">JavaScript</div>
-            <div class="skill-box" id="bootstrap">Bootstrap</div>
-            <div class="skill-box" id="sass">SASS</div>
-            <div class="skill-box" id="git">GIT</div>
-            <div class="skill-box" id="nodejs">Node JS</div>
+            <div class="skill-box hidden" id="html">HTML</div>
+            <div class="skill-box hidden" id="css">CSS</div>
+            <div class="skill-box hidden" id="js">JavaScript</div>
+            <div class="skill-box hidden" id="bootstrap">Bootstrap</div>
+            <div class="skill-box hidden" id="sass">SASS</div>
+            <div class="skill-box hidden" id="git">GIT</div>
+            <div class="skill-box hidden" id="nodejs">Node JS</div>
           </div>
         </div>
       </section>
@@ -113,7 +113,7 @@
       <section id="projects">
         <h2 class="section-title">Top Projects</h2>
         <div class="projects-grid">
-          <article class="projects-card">
+          <article class="projects-card hidden">
             <div class="card-header">
               <img
                 src="./images/restomate.jpg"
@@ -147,7 +147,7 @@
               </div>
             </div>
           </article>
-          <article class="projects-card">
+          <article class="projects-card hidden">
             <div class="card-header">
               <img
                 src="./images/note app.jpg"
@@ -179,7 +179,7 @@
               </div>
             </div>
           </article>
-          <article class="projects-card">
+          <article class="projects-card hidden">
             <div class="card-header">
               <img
                 src="./images/time tracking.jpg"
@@ -212,7 +212,7 @@
               </div>
             </div>
           </article>
-          <article class="projects-card">
+          <article class="projects-card hidden">
             <div class="card-header">
               <img
                 src="./images/newsletter signup.jpg"
@@ -257,7 +257,8 @@
         <form
           action="https://api.web3forms.com/submit"
           method="post"
-          id="contact-form">
+          id="contact-form"
+          class="hidden">
           <input
             type="hidden"
             name="access_key"
@@ -295,7 +296,6 @@
           </div>
 
           <button type="submit" id="submit-button">Submit</button>
-          </div>
         </form>
       </section>
     </main>
