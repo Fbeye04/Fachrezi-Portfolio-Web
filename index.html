@@ -19,6 +19,7 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
     <header>
       <nav class="nav-container" aria-label="Main navigation">
         <h1>Fachrezi</h1>
@@ -26,7 +27,10 @@
         <div class="list-content">
           <div class="menu-open" id="menu-open">
             <div class="menu-header">
-              <button class="close-button" id="close-button">
+              <button
+                class="close-button"
+                id="close-button"
+                aria-label="Close menu">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -52,10 +56,13 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section id="home" class="hero hidden">
         <div class="hero-header">
-          <img src="./images/main profile picture.jpg" alt="Profile picture" />
+          <img
+            src="./images/main profile picture.jpg"
+            alt="Profile picture"
+            loading="lazy" />
         </div>
         <div class="hero-content">
           <div class="hero-text">
@@ -82,7 +89,8 @@
           <div class="get-to-know-body hidden">
             <img
               src="./images/second profile picture.jpg"
-              alt="Second Profile Picture" />
+              alt="Second Profile Picture"
+              loading="lazy" />
             <p>
               I am Muhammad Fachrezi Barus, a physics student at ITS with a
               strong passion for front-end web development. Over the past year,
@@ -99,10 +107,27 @@
         <div class="skills-content" id="my-skills">
           <h3>My Skills</h3>
           <div class="skills-grid">
-            <div class="skill-box hidden" id="html">HTML</div>
-            <div class="skill-box hidden" id="css">CSS</div>
-            <div class="skill-box hidden" id="js">JavaScript</div>
-            <div class="skill-box hidden" id="bootstrap">Bootstrap</div>
+            <div
+              class="skill-box hidden"
+              id="html"
+              aria-label="first skill is HTML">
+              HTML
+            </div>
+            <div
+              class="skill-box hidden"
+              id="css"
+              aria-label="second skill is CSS">
+              CSS
+            </div>
+            <div
+              class="skill-box hidden"
+              id="js"
+              aria-label="third skill is JavaScript">
+              JavaScript
+            </div>
+            <div class="skill-box hidden" id="bootstrap" aria-label="">
+              Bootstrap
+            </div>
             <div class="skill-box hidden" id="sass">SASS</div>
             <div class="skill-box hidden" id="git">GIT</div>
             <div class="skill-box hidden" id="nodejs">Node JS</div>
@@ -117,7 +142,8 @@
             <div class="card-header">
               <img
                 src="./images/restomate.jpg"
-                alt="RestoMate Project thumbnail" />
+                alt="RestoMate Project thumbnail"
+                loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-body-header">
@@ -151,7 +177,8 @@
             <div class="card-header">
               <img
                 src="./images/note app.jpg"
-                alt="Note App Project thumbnail" />
+                alt="Note App Project thumbnail"
+                loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-body-header">
@@ -183,7 +210,8 @@
             <div class="card-header">
               <img
                 src="./images/time tracking.jpg"
-                alt="Time Tracking Dashboard Project thumbnail" />
+                alt="Time Tracking Dashboard Project thumbnail"
+                loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-body-header">
@@ -216,7 +244,8 @@
             <div class="card-header">
               <img
                 src="./images/newsletter signup.jpg"
-                alt="Newsletter Signup Page Project thumbnail" />
+                alt="Newsletter Signup Page Project thumbnail"
+                loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-body-header">
@@ -295,7 +324,9 @@
             <div class="error"></div>
           </div>
 
-          <button type="submit" id="submit-button">Submit</button>
+          <button type="submit" id="submit-button" aria-label="Submit button">
+            Submit
+          </button>
         </form>
       </section>
     </main>

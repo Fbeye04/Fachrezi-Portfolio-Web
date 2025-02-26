@@ -1,13 +1,15 @@
 :root {
   /* color */
   --custom-black: #1e2022;
-  --custom-grey: #c9d6df;
+  --custom-grey: #a7b4bf;
   --alert-success-bg: #dcfce7;
   --alert-success-border: #86efac;
   --alert-success-text: #166534;
   --alert-error-bg: #fee2e2;
   --alert-error-border: #fca5a5;
   --alert-error-text: #991b1b;
+  --focus-color: #4299e1;
+  --text-on-dark: #ffffff;
 
   /* hover */
   --custom-black-hover: #52616b;
@@ -39,6 +41,26 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--custom-black);
+  color: #fff;
+  padding: 0.5rem;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 h1 {
@@ -157,7 +179,7 @@ header {
 
 main {
   margin: 1rem 1.5rem;
-  padding-top: 4rem; /* Sesuaikan dengan tinggi header */
+  padding-top: 4rem;
 }
 
 .hidden {
@@ -224,9 +246,9 @@ main {
 }
 
 .btn-download a {
-  color: #fff;
-  text-decoration: none;
+  color: var(--text-on-dark);
   font-weight: var(--fw-semibold);
+  text-decoration: none;
 }
 
 .btn-download:hover {
@@ -392,9 +414,9 @@ main {
 
 .btn-see-more {
   background-color: var(--custom-black);
-  color: #fff;
-  text-decoration: none;
+  color: var(--text-on-dark);
   font-weight: var(--fw-semibold);
+  text-decoration: none;
   padding: 0.7rem;
   border-radius: 0.5rem;
 }
@@ -467,7 +489,8 @@ form {
 
 #submit-button {
   background-color: var(--custom-black);
-  color: #fff;
+  color: var(--text-on-dark);
+  font-weight: var(--fw-semibold);
   padding: 0.7rem 2rem;
   border: none;
   border-radius: 0.5rem;
@@ -475,7 +498,6 @@ form {
   margin-top: 2rem;
   display: block;
   margin-inline: auto;
-  font-weight: var(--fw-semibold);
   font-size: 1.1rem;
 }
 
@@ -548,7 +570,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 5rem;
-  box-shadow: inset 0 5px 8px -8px var(--custom-black); /* Mengatur shadow hanya pada bagian atas */
+  box-shadow: inset 0 5px 8px -8px var(--custom-black);
   width: 100%;
   padding: 1rem;
 }
@@ -717,6 +739,11 @@ footer {
     align-items: center;
   }
 
+  .hero-header img {
+    width: 300px;
+    height: 300px;
+  }
+
   .hero-content {
     justify-content: left;
     align-items: flex-start;
@@ -744,12 +771,6 @@ footer {
     max-width: 37rem;
   }
 
-  .skills-grid {
-    grid-template-areas:
-      "html css js bootstrap"
-      "sass git nodejs ...";
-  }
-
   .card-body-header h3 {
     padding: 0 1rem;
     text-align: left;
@@ -761,6 +782,7 @@ footer {
 
   form {
     max-width: 55rem;
+    margin-inline: auto;
   }
 
   .social-media ul li i {
