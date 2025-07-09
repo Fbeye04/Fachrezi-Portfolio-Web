@@ -243,6 +243,8 @@ main {
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(68, 67, 67, 0.2);
+  transition: all 0.3s ease;
 }
 
 .btn-download a {
@@ -252,12 +254,8 @@ main {
 }
 
 .btn-download:hover {
-  background-color: #f5f5f5;
-}
-
-.btn-download:hover a {
-  color: #fc5185;
-  font-weight: var(--fw-bold);
+  transform: translateY(2px);
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.2);
 }
 
 #about-me {
@@ -321,6 +319,10 @@ main {
   grid-area: bootstrap;
 }
 
+#tailwind {
+  grid-area: tailwind;
+}
+
 #sass {
   grid-area: sass;
 }
@@ -337,9 +339,10 @@ main {
   margin-top: 1rem;
   display: grid;
   grid-template-areas:
-    "html css js"
-    "bootstrap sass git"
-    "... nodejs ...";
+    "html css "
+    "js tailwind"
+    "bootstrap sass "
+    "git nodejs";
   gap: 1rem;
 }
 
@@ -370,6 +373,8 @@ main {
   border: 0.2rem solid var(--custom-black);
   border-radius: 0.5rem;
   padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects-grid {
@@ -386,6 +391,12 @@ main {
   border-radius: 0.5rem;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .card-body-header h3 {
   text-align: center;
 }
@@ -399,8 +410,9 @@ main {
 .card-links {
   display: flex;
   justify-content: space-around;
-  padding: 0.5rem;
+  padding: 1.5rem 0.5rem 1rem 0.5rem;
   margin-top: 1rem;
+  margin-top: auto;
 }
 
 .card-links a {
@@ -419,12 +431,13 @@ main {
   text-decoration: none;
   padding: 0.7rem;
   border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(68, 67, 67, 0.2);
+  transition: all 0.3s ease;
 }
 
 .btn-see-more:hover {
-  background-color: #f5f5f5;
-  color: #fc5185;
-  font-weight: var(--fw-bold);
+  transform: translateY(2px);
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.2);
 }
 
 #contact-me {
@@ -499,12 +512,13 @@ form {
   display: block;
   margin-inline: auto;
   font-size: 1.1rem;
+  box-shadow: 0px 4px 8px rgba(68, 67, 67, 0.2);
+  transition: all 0.3s ease;
 }
 
 #submit-button:hover {
-  background-color: #f5f5f5;
-  color: #fc5185;
-  font-weight: var(--fw-bold);
+  transform: translateY(2px);
+  box-shadow: 0px 2px 4px rgba(41, 41, 41, 0.2);
 }
 
 @keyframes slideIn {
@@ -603,7 +617,7 @@ footer {
 }
 
 /* tablet */
-@media (min-width: 40rem) {
+@media (min-width: 768px) {
   .nav-container {
     padding: 2.5rem 3rem;
   }
@@ -650,6 +664,13 @@ footer {
     font-size: 1.2rem;
   }
 
+  .skills-grid {
+    grid-template-areas:
+      "html css js"
+      "tailwind bootstrap sass "
+      "git nodejs ...";
+  }
+
   .skill-box {
     font-size: 1.2rem;
   }
@@ -669,7 +690,7 @@ footer {
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
   h1 {
     font-size: 2.2rem;
   }
@@ -769,6 +790,12 @@ footer {
 
   .get-to-know-body p {
     max-width: 37rem;
+  }
+
+  .skills-grid {
+    grid-template-areas:
+      "html css js tailwind"
+      "bootstrap sass git nodejs";
   }
 
   .card-body-header h3 {
